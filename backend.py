@@ -98,6 +98,19 @@ def calculate_bollinger_bands(prices):
 
 
 
+@app.route('/')
+def home():
+    return jsonify({
+        "status": "running",
+        "message": "Stock Analysis API is operational",
+        "endpoints": {
+            "analyze": "/analyze (POST)",
+            "portfolio": "/portfolio (POST)",
+            "balance": "/balance (GET)"
+        }
+    })
+
+
 @app.route('/userinfo', methods=['POST'])
 def get_user():
     global dhan, user_data
